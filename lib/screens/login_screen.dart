@@ -102,12 +102,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 return const Center(child: CircularProgressIndicator());
               }
               if (state is LoginFailed) {
-                return Center(child: Text(state.message));
+                return Center(
+                  child: Text(
+                    state.message,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                );
               } else {
                 return const Center(
                   child: Text(
                     "There is a wrong ",
-                    style: TextStyle(color: Colors.red),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white),
                   ),
                 );
               }

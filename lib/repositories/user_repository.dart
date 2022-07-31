@@ -30,11 +30,10 @@ class UserRepository {
   signIn(String email, String password, Emitter<LoginState> emit) async {
     try {
       await FirebaseAuth.instance
-          .signInWithEmailAndPassword(
-              email: 'ahmad.abood1997@gmail.com', password: '0991224361ahmed')
+          .signInWithEmailAndPassword(email: email, password: password)
           .then((value) {
         emit(LoginSucced());
-        print('True');
+        print(email);
       });
     } catch (e) {
       print('False');

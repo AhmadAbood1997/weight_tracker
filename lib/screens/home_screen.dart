@@ -57,8 +57,16 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             FirebaseAnimatedList(
               query: ref,
+              sort: (a, b) {
+                return b.value
+                    .toString()
+                    .toLowerCase()
+                    .compareTo(a.value.toString().toLowerCase());
+              },
               shrinkWrap: true,
               itemBuilder: (context, snapshot, animation, index) {
+                print(snapshot.value);
+
                 var v = snapshot.value
                     .toString(); // {subtitle: webfun, title: subscribe}
 

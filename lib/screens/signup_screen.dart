@@ -112,9 +112,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 return const Center(child: CircularProgressIndicator());
               }
               if (state is SignupFailed) {
-                return Center(child: Text(state.message));
+                return Center(
+                    child: Text(
+                  state.message,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(color: Colors.white),
+                ));
               } else {
-                return const Center(child: Text("Something is wrong"));
+                return const Center(
+                    child: Text(
+                  "Something is wrong",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.white),
+                ));
               }
             },
           ),
